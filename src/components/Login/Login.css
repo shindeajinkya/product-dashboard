@@ -3,3 +3,9 @@
     margin-top: 30vh;
     text-align: center;
 }
+
+@media(max-width: 768px) {
+    .login{
+        width: 80%;
+    }
+}
