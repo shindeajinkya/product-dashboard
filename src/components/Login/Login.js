@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, Typography, Space, Card } from 'antd'
+import { withRouter } from 'react-router-dom'
 import app, { provider } from '../../base'
 import './Login.css'
 
@@ -28,4 +29,4 @@ function Login({history}){
     )
 }
 
-export default Login
+export default withRouter(Login)
