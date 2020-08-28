@@ -12,7 +12,7 @@ function App() {
       <Router>
         <div>
           <PrivateRoute exact path='/' component={Dashboard} />
-          <Route exact path='/login' component={Login} />
+          <Route path='/login' component={Login} />
         </div>
       </Router>
     </AuthProvider>

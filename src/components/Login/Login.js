@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { Button, Typography, Space, Card } from 'antd'
 import { withRouter } from 'react-router-dom'
 import app, { provider } from '../../base'
@@ -8,15 +8,15 @@ const { Title } = Typography
 
 
 function Login({history}){
-    function signIn() {
-        app
+    const signIn = useCallback(async event => {
+        event.preventDefault()
+        await app
         .auth()
         .signInWithPopup(provider)
-        .then(() => {
-            history.push('/')
-        })
+        .then(res => history.push('/'))
         .catch(err => console.log(err))
-    }
+    }, [history])
+
     return (
         <div className='container flex login'>
             <Space direction='vertical'>
